@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>IZ Web Studio｜LP制作・Web修正</title>
+  <meta name="description" content="LP制作，既存ページの軽微修正，レスポンシブ対応，表示崩れ修正に対応．仮払い確認後に着手します．" />
+  <style>
+    :root{
+      --bg:#0b0f19; --card:#111827; --text:#e5e7eb; --muted:#9ca3af;
+      --accent:#3b82f6; --line:#1f2937; --white:#ffffff;
+      --shadow: 0 14px 40px rgba(0,0,0,.35);
+      --r: 16px; --max: 1040px;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans JP",sans-serif;background:radial-gradient(900px 500px at 20% 0%, rgba(59,130,246,.20), transparent 60%), var(--bg); color:var(--text); line-height:1.7}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;backdrop-filter: blur(12px); background:rgba(11,15,25,.72); border-bottom:1px solid rgba(31,41,55,.6); z-index:10}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .logo{display:flex;gap:10px;align-items:center;font-weight:700;letter-spacing:.4px}
+    .badge{width:34px;height:34px;border-radius:999px;background:rgba(59,130,246,.18);display:grid;place-items:center;border:1px solid rgba(59,130,246,.35)}
+    .navlinks{display:flex;gap:14px;align-items:center}
+    .navlinks a{font-size:14px;color:var(--muted)}
+    .navlinks a:hover{color:var(--text)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:10px 14px;border:1px solid rgba(59,130,246,.45); background:rgba(59,130,246,.18); color:var(--white); font-weight:700; font-size:14px}
+    .btn:hover{background:rgba(59,130,246,.28)}
+    .ghost{background:transparent;border:1px solid rgba(156,163,175,.35); color:var(--text)}
+    .ghost:hover{border-color:rgba(229,231,235,.5)}
+    .hero{padding:54px 0 26px}
+    .grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:center}
+    @media (max-width:920px){.grid2{grid-template-columns:1fr;}}
+    h1{font-size:42px;line-height:1.2;margin:0 0 12px}
+    @media (max-width:520px){h1{font-size:32px}}
+    .lead{color:var(--muted);margin:0 0 18px}
+    .pills{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
+    .pill{font-size:12px;color:var(--text);padding:6px 10px;border-radius:999px;border:1px solid rgba(31,41,55,.9);background:rgba(17,24,39,.8)}
+    .card{background:linear-gradient(180deg, rgba(17,24,39,.92), rgba(17,24,39,.72)); border:1px solid rgba(31,41,55,.9); border-radius:var(--r); box-shadow:var(--shadow)}
+    .heroCard{padding:18px}
+    .heroSvg{width:100%;height:auto;border-radius:14px;border:1px solid rgba(31,41,55,.9); background:rgba(2,6,23,.55)}
+    section{padding:34px 0}
+    .secTitle{font-size:22px;margin:0 0 8px}
+    .secSub{margin:0 0 18px;color:var(--muted)}
+    .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    @media (max-width:920px){.cards3{grid-template-columns:1fr}}
+    .item{padding:16px}
+    .k{font-weight:800}
+    .small{font-size:13px;color:var(--muted);margin-top:6px}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media (max-width:920px){.split{grid-template-columns:1fr}}
+    .price{padding:18px}
+    .price h3{margin:0 0 6px}
+    .yen{font-size:28px;font-weight:900;margin:8px 0 0}
+    .list{margin:12px 0 0;padding:0 0 0 18px;color:var(--muted)}
+    .list li{margin:6px 0}
+    .steps{counter-reset:st; display:grid; gap:10px}
+    .step{padding:14px 14px 14px 50px; position:relative}
+    .step:before{counter-increment:st; content:counter(st); position:absolute; left:14px; top:14px; width:26px; height:26px; border-radius:999px; display:grid; place-items:center;
+      background:rgba(59,130,246,.18); border:1px solid rgba(59,130,246,.45); font-weight:900}
+    details{border:1px solid rgba(31,41,55,.9); border-radius:14px; padding:12px 14px; background:rgba(17,24,39,.65)}
+    details + details{margin-top:10px}
+    summary{cursor:pointer;font-weight:700}
+    footer{padding:26px 0 40px;border-top:1px solid rgba(31,41,55,.7); color:var(--muted)}
+    .note{font-size:12px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="logo">
+        <div class="badge">IZ</div>
+        <span>IZ Web Studio</span>
+      </div>
+      <div class="navlinks">
+        <a href="#service">対応範囲</a>
+        <a href="#pricing">料金</a>
+        <a href="#process">流れ</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn" href="#contact">相談する</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="grid2">
+        <div>
+          <h1>LP制作とWeb修正で，<br>「伝わるページ」を最短で作る．</h1>
+          <p class="lead">LPのコーディング，既存ページの軽微修正，レスポンシブ対応，表示崩れ修正に対応．仮払い確認後に着手し，途中経過を共有しながら進めます．</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn" href="#contact">無料で相談する</a>
+            <a class="btn ghost" href="#pricing">料金を見る</a>
+          </div>
+          <div class="pills">
+            <span class="pill">スマホ表示に強い</span>
+            <span class="pill">軽量で速い</span>
+            <span class="pill">修正も丁寧</span>
+            <span class="pill">ログイン／決済は扱わない</span>
+          </div>
+          <p class="note" style="margin-top:10px">※ このページは見本です．お問い合わせはクラウドワークス経由で受け付ける想定です．</p>
+        </div>
+
+        <div class="card heroCard">
+          <svg class="heroSvg" viewBox="0 0 800 520" role="img" aria-label="LPのイメージ">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stop-color="rgba(59,130,246,.35)"/>
+                <stop offset="1" stop-color="rgba(59,130,246,.08)"/>
+              </linearGradient>
+            </defs>
+            <rect x="18" y="18" width="764" height="484" rx="18" fill="rgba(17,24,39,.7)" stroke="rgba(31,41,55,.9)" />
+            <rect x="46" y="56" width="280" height="22" rx="10" fill="rgba(229,231,235,.10)"/>
+            <rect x="46" y="94" width="420" height="18" rx="9" fill="rgba(229,231,235,.08)"/>
+            <rect x="46" y="124" width="380" height="18" rx="9" fill="rgba(229,231,235,.08)"/>
+            <rect x="46" y="170" width="220" height="44" rx="22" fill="url(#g)" stroke="rgba(59,130,246,.45)"/>
+            <rect x="46" y="236" width="708" height="1" fill="rgba(31,41,55,.9)"/>
+            <rect x="46" y="270" width="220" height="120" rx="14" fill="rgba(229,231,235,.06)" stroke="rgba(31,41,55,.9)"/>
+            <rect x="290" y="270" width="220" height="120" rx="14" fill="rgba(229,231,235,.06)" stroke="rgba(31,41,55,.9)"/>
+            <rect x="534" y="270" width="220" height="120" rx="14" fill="rgba(229,231,235,.06)" stroke="rgba(31,41,55,.9)"/>
+            <circle cx="120" cy="330" r="18" fill="rgba(59,130,246,.25)" stroke="rgba(59,130,246,.5)"/>
+            <circle cx="364" cy="330" r="18" fill="rgba(59,130,246,.25)" stroke="rgba(59,130,246,.5)"/>
+            <circle cx="608" cy="330" r="18" fill="rgba(59,130,246,.25)" stroke="rgba(59,130,246,.5)"/>
+          </svg>
+          <div style="margin-top:12px;color:var(--muted);font-size:13px">
+            例え話：このLPは「店頭の看板」．通りすがりの人が3秒で理解できるように作ります．
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="service">
+      <h2 class="secTitle">対応できること</h2>
+      <p class="secSub">受注しやすい領域に絞って，確実に納品できる範囲で対応します．</p>
+      <div class="cards3">
+        <div class="card item">
+          <div class="k">LPのコーディング</div>
+          <div class="small">デザインをもとにHTML／CSSで実装．スマホ対応込み．</div>
+        </div>
+        <div class="card item">
+          <div class="k">表示崩れ・軽微修正</div>
+          <div class="small">余白，フォント，崩れ，リンク，微調整など．</div>
+        </div>
+        <div class="card item">
+          <div class="k">簡単なJavaScript追加</div>
+          <div class="small">スムーススクロール，アコーディオン等．</div>
+        </div>
+      </div>
+      <p class="note" style="margin-top:12px">対応外：ログイン機能，決済，個人情報DB，スクレイピング大量．</p>
+    </section>
+
+    <section id="pricing">
+      <h2 class="secTitle">料金の目安</h2>
+      <p class="secSub">作業範囲を文章で合意してから進めます．追加要望は別見積もりか納期調整です．</p>
+      <div class="split">
+        <div class="card price">
+          <h3>軽微修正プラン</h3>
+          <div class="yen">¥5,000〜</div>
+          <ul class="list">
+            <li>表示崩れ／余白／文言修正</li>
+            <li>リンク修正，簡単な調整</li>
+            <li>納品目安：1〜2日</li>
+          </ul>
+        </div>
+        <div class="card price">
+          <h3>LPコーディングプラン</h3>
+          <div class="yen">¥20,000〜</div>
+          <ul class="list">
+            <li>1ページ構成（レスポンシブ）</li>
+            <li>軽量化の基本対応</li>
+            <li>納品目安：3〜7日</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <h2 class="secTitle">進め方</h2>
+      <p class="secSub">仮払い確認後に着手し，途中経過を共有しながら進めます．</p>
+      <div class="steps">
+        <div class="card step">要件すり合わせ：目的，ページ数，デザイン有無，納期，修正回数を確認．</div>
+        <div class="card step">制作：進捗を共有しながら実装．</div>
+        <div class="card step">確認：スマホ表示，リンク動作，表示速度などをチェック．</div>
+        <div class="card step">納品：URL，ソース一式，使い方メモの3点セット．</div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2 class="secTitle">FAQ</h2>
+      <p class="secSub">よくある不安を先に潰します．</p>
+      <details>
+        <summary>修正は何回まで？</summary>
+        <div class="small">目安を最初に合意します．範囲外の追加は別見積もりか納期調整です．</div>
+      </details>
+      <details>
+        <summary>素材（文章／画像）がなくても大丈夫？</summary>
+        <div class="small">仮の文章やフリー素材で見本制作は可能です．本番は支給素材があると最速です．</div>
+      </details>
+      <details>
+        <summary>問い合わせフォームは作れる？</summary>
+        <div class="small">見本ではダミーにしています．個人情報を扱う実運用フォームは最初は受けません．</div>
+      </details>
+    </section>
+
+    <section id="contact">
+      <h2 class="secTitle">相談する</h2>
+      <p class="secSub">連絡はクラウドワークス内で完結させる想定です．</p>
+      <div class="card item">
+        <div class="k">クラウドワークス経由でお問い合わせ</div>
+        <div class="small">プロフィールのメッセージからご連絡ください．24時間以内の返信を目標にします．</div>
+        <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="#" onclick="alert('見本のためリンクは無効です．クラウドワークスのメッセージからご連絡ください．');return false;">メッセージする（見本）</a>
+          <a class="btn ghost" href="#service">対応範囲を見る</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© IZ Web Studio</div>
+      <div class="note">このLPはポートフォリオ用の見本です．</div>
+    </footer>
+  </main>
+</body>
+</html>
